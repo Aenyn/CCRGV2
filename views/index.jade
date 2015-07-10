@@ -1,0 +1,19 @@
+html
+  head
+    title= "Real time web chat"
+    script(src='/chat.js')
+    script(src='/socket.io/socket.io.js')
+    link(rel='stylesheet', href='/stylesheets/standard.css')
+    
+  body
+    #contentArea(style='display:none;')
+      #content
+      form#controls
+        input#prompt
+        input#send(type='button', value='send')
+    #loginArea
+      input#login
+      input#pass
+      input#authenticate(type='button', value='authenticate')
+    #online
+    #announcement
