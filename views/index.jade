@@ -7,13 +7,16 @@ html
     
   body
     #contentArea(style='display:none;')
-      #content
-      form#controls
-        input#prompt
-        input#send(type='button', value='send')
+      #hide_scroll
+        #content
+      form#controls(onsubmit='return sendMessage()')    
+        label#user(for='prompt')
+        input#prompt(autocomplete='off') 
+      #announcement
+      #online
+        |Online right now:<br />
     #loginArea
-      input#login
-      input#pass
-      input#authenticate(type='button', value='authenticate')
-    #online
-    #announcement
+      form(onsubmit='authenticate()')
+        input#login(placeholder='login')
+        input#pass(placeholder='pass')
+        input#authenticate(type='button', value='authenticate')
